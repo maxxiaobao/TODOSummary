@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h4>img的onload事件</h4>
+	关于`img`标签的onload事件，这是一个异步加载操作
+	资源加载首先要确定资源位置的src属性，随之就是资源加载成功与否的onload事件和onerror事件
+	1. onload事件，当资源加载完成后并成功解析后触发（如果加载的不是image资源，则解析失败）
+	2. onerror事件，当找不到资源或者解析失败后触发
+	3. onreadystatechange事件，在onload事件后触发
+	4. readyState属性，用于表示IMG元素当前的资源装载状态，默认值为“uninitialized”，onload事件触发后变为“complete”（onload事件处理函数运行时，readyState依然为“uninitialized”）
+	5. complete属性，用于表示IMG元素资源是否成功解析。默认为false，onload的事件触发后变为true（onload事件处理函数运行时，readystate一人为fasle）
+	6. src属性，用于指定资源位置的URI。常见的格式为http://...、https://...、javascript:...和data:image/*...。而不同的浏览器对不同的URI支持程度和行为均有差异。
+	
+	<h4>canvas基础知识</h4>
+	context：是一个封装了很多绘图功能的对象，获取这个对象的方法是 var context = canvas.getContext("2d");
+	canvas元素绘制图像的时候有两种方法 ① 填充 context.fill() ② 绘制边框 context.stroke()
+	style：在进行图形绘制前，要设置好绘图的样式 
+	context.fillStyle //填充样式
+	context.strokeStyle //边框样式
+	context.lineWidth //图形边框的宽度
+	颜色的表示方式
+		直接用颜色名称："red"、"green"、"blue"
+		十六进制颜色值："#EEEEFF"
+		rgb(1-255,1-255,1-255)
+		rgba(1-255,1-255,1-255,透明度)
+
+	save()     保存 canvas 状态
+	restore(） 恢复 canvas 状态的
+	translate(x,y) 水平和垂直的偏移
+	scale(x,y)	水平和垂直的缩放
+	rotate(angle)  旋转的量。正值表示顺时针方向旋转，负值表示逆时针方向旋转。
+	setTransform(a,b,c,d,e,f)	水平缩放,水平倾斜(与旋转有关),垂直倾斜(与旋转有关，-水平倾斜),垂直缩放,水平移动,垂直移动
+	transform(a,b,c,d,e,f)	水平缩放,水平倾斜,垂直倾斜,垂直缩放,水平移动,垂直移动
+
+	<h4>关于EXIF</h4>
+	Exif.js 提供了 JavaScript 读取图像的原始数据的功能扩展。
+	例如：拍照方向、相机设备型号、拍摄时间、ISO感光度、GPS地理位置等数据。
+	注意事项：EXIF数据主要来自拍摄的照片，多用于移动端开发，PC端也会用到，插件兼容主浏览器，IE10以下不支持。
+	EXIF.getData(document.getElementById('imgElement'),function(){
+		EXIF.getAllTags(this);
+		EXIF.getTag(this,'Orientation')
+	})
+	//API 方法
+	EXIF.getData(img,callback) -- 获取图像的数据
+	EXIF.getData(img,tag) -- 获取图像的某个数据
+	EXIF.getAllTags(img) -- 获取图像的全部数据，值以对象方式返回
+	EXIF.pretty(img) -- 获取图像的全部数据，值以字符串的方式返回
+
+	//EXIF 标识 too much
+
+	<h4>npm moudle 发布</h4>
+	一、准备工具
+	1. 安装NodeJS
+	2. 注册一个github账户用户托管代码
+	3. 注册一个npm账户
+	4. 开发你的module，更新至github
+	5. 发布module至npm
+	二、安装NodeJS
+	安装完NodeJS后，npm也会被安装对应的版本，安装完成后对应的npm也会被安装进入终端。
+	输入命令查询版本：
+	$ node -v
+	$ npm -v
+	三、github 创建项目
+	github 注册账户 -> 新建项目 -> 然后clone到本地
+	终端进入到项目文件夹，执行npm init命令，构建模块的描述文件，系统会提示所需要输入的信息，如果不想输入，直接enter跳过。
+	主要的几个配置：
+	· name 就是你要发布的module
+	· version 版本信息（每发布一次版本号都必须大于上一次发布的版本号）
+	· entry 入口文件
+	四、npm注册
+	输入用户名、密码、邮箱后没有错误信息就完成了
+	$ npm adduser
+	Username: your name
+	Password: your password
+	Email: (this is public) your email
+	查询或登录别的用户命令
+	$ npm whoim
+	$ npm login
+	五、npm module 发布
+	module开发完毕后，就可以发布了，进入项目根目录，输入命令
+	$ npm publish
+	更新版本
+	$ npm version 0.1.1
+	$ npm publish
+	版本号规范
+	npm社区版本号规则采用的是semver(语义化版本)，主要规则版本格式：主版本号、此版本号、修订号
+	版本号规则：
+	· 主版本号：当你做了不兼容的API修改
+	· 次版本号：当你做了向下兼容的功能性新增
+	· 修订号：当你做了向下兼容的问题修正
+</body>
+</html>
