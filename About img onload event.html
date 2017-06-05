@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>About img onload event</title>
+</head>
+<body>
+	关于`img`标签的onload事件，这是一个异步加载操作
+	资源加载首先要确定资源位置的src属性，随之就是资源加载成功与否的onload事件和onerror事件
+	1. onload事件，当资源加载完成后并成功解析后触发（如果加载的不是image资源，则解析失败）
+	2. onerror事件，当找不到资源或者解析失败后触发
+	3. onreadystatechange事件，在onload事件后触发
+	4. readyState属性，用于表示IMG元素当前的资源装载状态，默认值为“uninitialized”，onload事件触发后变为“complete”（onload事件处理函数运行时，readyState依然为“uninitialized”）
+	5. complete属性，用于表示IMG元素资源是否成功解析。默认为false，onload的事件触发后变为true（onload事件处理函数运行时，readystate一人为fasle）
+	6. src属性，用于指定资源位置的URI。常见的格式为http://...、https://...、javascript:...和data:image/*...。而不同的浏览器对不同的URI支持程度和行为均有差异。
+</body>
+</html>

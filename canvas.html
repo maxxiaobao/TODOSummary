@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas</title>
+</head>
+<body>
+	<h3>基本知识</h3>
+	context：是一个封装了很多绘图功能的对象，获取这个对象的方法是 var context = canvas.getContext("2d");
+	canvas元素绘制图像的时候有两种方法 ① 填充 context.fill() ② 绘制边框 context.stroke()
+	style：在进行图形绘制前，要设置好绘图的样式 
+	context.fillStyle //填充样式
+	context.strokeStyle //边框样式
+	context.lineWidth //图形边框的宽度
+	颜色的表示方式
+		直接用颜色名称："red"、"green"、"blue"
+		十六进制颜色值："#EEEEFF"
+		rgb(1-255,1-255,1-255)
+		rgba(1-255,1-255,1-255,透明度)
+
+	save()     保存 canvas 状态
+	restore(） 恢复 canvas 状态的
+	translate(x,y) 水平和垂直的偏移
+	scale(x,y)	水平和垂直的缩放
+	rotate(angle)  旋转的量。正值表示顺时针方向旋转，负值表示逆时针方向旋转。
+	setTransform(a,b,c,d,e,f)	水平缩放,水平倾斜(与旋转有关),垂直倾斜(与旋转有关，-水平倾斜),垂直缩放,水平移动,垂直移动
+	transform(a,b,c,d,e,f)	水平缩放,水平倾斜,垂直倾斜,垂直缩放,水平移动,垂直移动
+
+</body>
+</html>
