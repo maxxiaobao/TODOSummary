@@ -10,11 +10,14 @@
 	export default 命令用于指定模块的默认输出。显然，一个模块只能有一个默认输出，因此export default命令只能使用一次。所以import命令后面才不用大括号，相反其他的export输出可以有多个，且import时必须加大括号。
 	<li>import 模块导入</li>
 	在 import 的时候，如果不使用相对路径或者绝对路径，node默认回去node_modules/文件夹下去找。
-	例如：
+	<xmp>
+	<div></div>
 	import * as obj from 'exports'
 	// node 会试着去寻找 node_module/exports.js 模块
 	
 	// 正确写法
 	import * as obj from './exports'
+	</xmp>
+	<li>xmp可以显示代码</li>
 </body>
 </html>
