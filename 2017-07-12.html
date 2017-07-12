@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	水平居中
+	1. text-align: center;
+	2. margin: 0 auto;
+	3. position定位:fixed / absoluted; left: 50%; margin-left: -width/2;
+	4. margin-left: 50%;(父元素的百分之50) transform: translate(-50%,0)(自身宽度的50%);
+	5. display: flex; justify-content: center; 
+
+	
+	垂直居中
+	1. height: 20px; line-height: 20px;
+	2. 父元素 / display: table; 子元素 / display: table-cell; vertical-align: center;
+	3. 父元素 / position: relative; 
+	   子元素 / position: absolute; 
+	   		   top: 50%; 
+	   		   left: 50%; 
+	   		   width: 10px; 
+	   		   height: 20px;
+	   		   margin: -10px 0 0 -5px;
+	4. 父元素 / display: flex;
+			   align-items: center;
+	5. margin-top: 50%;(父元素的百分之50) transform: translate(0,-50%)(自身高度的50%);
+</body>
+</html>
