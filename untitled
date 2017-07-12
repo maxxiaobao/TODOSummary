@@ -1,0 +1,363 @@
+  - 
+    type: divider
+    divider_type: whitespace
+    mobile_treatment: same
+  - 
+    type: text_image_split
+    heading: Beijing Kerry Center 2 Store
+    small_text: Beijing
+    text: 1st Floor No.111; 2nd Floor No.204 Beijing Kerry Center Shopping Mall.No.1, Guanghua Rd, Jianguomenwai Str Chaoyang district,Beijing
+    image: ""
+    image_height: basic
+    style: left
+    background: none
+    image_placement: cover
+  - 
+    type: divider
+    divider_type: whitespace
+    mobile_treatment: same
+  - 
+    type: text_image_split
+    heading: Beijing Grand Summit II Store
+    small_text: Beijing
+    text: Unit 110,F1&Unit 213,F2,DRC,No.19 Dongfang East Road,Chaoyang District ,Beijing
+    image: ""
+    image_height: basic
+    style: left
+    background: none
+    image_placement: cover
+  - 
+    type: divider
+    divider_type: whitespace
+    mobile_treatment: same
+  - 
+    type: text_image_split
+    heading: China World Mall 1 Store
+    small_text: Beijing
+    text: SB126-SB127, B1, Building15-2, Jianguomenwaidajie Street, Chaoyang District,Beijing
+    image: ""
+    image_height: basic
+    style: left
+    background: none
+    image_placement: cover
+  - 
+    type: divider
+    divider_type: whitespace
+    mobile_treatment: same
+  - 
+    type: text_image_split
+    heading: Jinbao Place Store
+    small_text: Beijing
+    text: No88,Jinbao Street,Beijing
+    image: ""
+    image_height: basic
+    style: left
+    background: none
+    image_placement: cover
+  - 
+    type: divider
+    divider_type: whitespace
+    mobile_treatment: same
+  - 
+    type: text_image_split
+    heading: Guangyao Time Square Store
+    small_text: Beijing
+    text: Time Square Haidiannan street,Beijing
+    image: ""
+    image_height: basic
+    style: left
+    background: none
+    image_placement: cover
+  - 
+    type: divider
+    divider_type: whitespace
+    mobile_treatment: same
+  - 
+    type: text_image_split
+    heading: 798 Store
+    small_text: Beijing
+    text: Building No.39, Office No. 11, No.2 Jiuxianqiao Road
+    image: ""
+    image_height: basic
+    style: left
+    background: none
+    image_placement: cover
+  - 
+    type: divider
+    divider_type: whitespace
+    mobile_treatment: same
+  - 
+    type: text_image_split
+    heading: CD Mix City Store
+    small_text: Chengdu
+    text: B1, No.156, The Mix City Section 3 East, 2nd Ring Road Chenghua District,Chengdu, Sichuan
+    image: ""
+    image_height: basic
+    style: left
+    background: none
+    image_placement: cover
+  - 
+    type: divider
+    divider_type: whitespace
+    mobile_treatment: same
+  - 
+    type: text_image_split
+    heading: CD Raffles Plaza Store
+    small_text: Chengdu
+    text: No.3 Renmin South Road 4th Section,Chengdu
+    image: ""
+    image_height: basic
+    style: left
+    background: none
+    image_placement: cover
+  - 
+    type: divider
+    divider_type: whitespace
+    mobile_treatment: same
+  - 
+    type: text_image_split
+    heading: CD Yintai Center Store
+    small_text: Chengdu
+    text: 1F YinTai Center,No.1199 north Tianfu Road,Hi-Tech zone,chengdu, Sichuan
+    image: ""
+    image_height: basic
+    style: left
+    background: none
+    image_placement: cover
+  - 
+    type: divider
+    divider_type: whitespace
+    mobile_treatment: same
+  - 
+    type: text_image_split
+    heading: CQ WFC Store
+    small_text: Chongqing
+    text: No.188 National Road Underground B08 World Financial Center and B08A Unit,Yuzhong District,Chongqing
+    image: ""
+    image_height: basic
+    style: left
+    background: none
+  - 
+    type: divider
+    divider_type: whitespace
+    mobile_treatment: same
+  - 
+    type: text_image_split
+    heading: Dalian Hanglung Store
+    small_text: Dalian
+    text: 213a,Henglong Plaza,NO.66, 54 Road, Xigang District ,Dalian
+    image: ""
+    image_height: basic
+    style: left
+    background: none
+    image_placement: cover
+  - 
+    type: divider
+    divider_type: whitespace
+    mobile_treatment: same
+  - 
+    type: text_image_split
+    heading: FS Lingnan Station No.1 store
+    small_text: Foshan
+    text: Lingnan Station,Negative layer,Zumiao Road,Chancheng District,Foshan
+    image: ""
+    image_height: basic
+    style: left
+    background: none
+    image_placement: cover
+  - 
+    type: divider
+    divider_type: whitespace
+    mobile_treatment: same
+  - 
+    type: text_image_split
+    heading: FS Yuexiu Dating Mall Store
+    small_text: Foshan
+    text: Unit B101, G/F, Yuexiu Dating Mall, No. 84, Nanhai Avenue North, Nanhai District, Foshan
+    image: ""
+    image_height: basic
+    style: left
+    background: none
+    image_placement: cover
+  - 
+    type: divider
+    divider_type: whitespace
+    mobile_treatment: same
+  - 
+    type: text_image_split
+    heading: FZ East 2 Ring Thaihot Mall Store
+    small_text: Fuzhou
+    text: Unit B139, B1F, Building No.17，East 2 Ring Thaihot Mall, Zhuyu Road , Jinan District ,Fuzhou 
+    image: ""
+    image_height: basic
+    style: left
+    background: none
+    image_placement: cover
+  - 
+    type: divider
+    divider_type: whitespace
+    mobile_treatment: same
+  - 
+    type: text_image_split
+    heading: GZ Wanda Plaza Store
+    small_text: Guangzhou
+    text: Wanda Plaza-Lst Fool150,151-Et.Yuncheng Rood-BaiYun-GuangZhou
+    image: ""
+    image_height: basic
+    style: left
+    background: none
+    image_placement: cover
+  - 
+    type: divider
+    divider_type: whitespace
+    mobile_treatment: same
+  - 
+    type: text_image_split
+    heading: GZ Zhongshan 3 Rd No.2 Store
+    small_text: Guangzhou
+    text: No.2, Zhongshan 3 Road, Yuexiu District, Guangzhou
+    image: ""
+    image_height: basic
+    style: left
+    background: none
+    image_placement: cover
+  - 
+    type: divider
+    divider_type: whitespace
+    mobile_treatment: same
+  - 
+    type: text_image_split
+    heading: HZ Huamao Tiandi Store
+    small_text: Huizhou
+    text: No.1111,G/F,Huamao Tiandi, No.9 Wenchang 1 Road, North area, Huizhou
+    image: ""
+    image_height: basic
+    style: left
+    background: none
+    image_placement: cover
+  - 
+    type: divider
+    divider_type: whitespace
+    mobile_treatment: same
+  - 
+    type: text_image_split
+    heading: SZ Meilin Zhuoyuehui Store
+    small_text: Shenzhen
+    text: No L1-25 & L1-26,GF,Zhuoyuehui Plaza, Zhongkang Rd, Futian district, Shenzhen
+    image: ""
+    image_height: basic
+    style: left
+    background: none
+    image_placement: cover
+  - 
+    type: divider
+    divider_type: whitespace
+    mobile_treatment: same
+  - 
+    type: text_image_split
+    heading: SZ Kingglory Plaza Store
+    small_text: Shenzhen
+    text: Shop 106 on in Basement 1,Kingglory Plaza,Renmin South Road,Shenzhen
+    image: ""
+    image_height: basic
+    style: left
+    background: none
+    image_placement: cover
+  - 
+    type: divider
+    divider_type: whitespace
+    mobile_treatment: same
+  - 
+    type: text_image_split
+    heading: WH Hanjie Wanda Plaza Store
+    small_text: Wuhan
+    text: J2-J3, NO.1 street, Hanjie,Wuchang district,Wuhan
+    image: ""
+    image_height: basic
+    style: left
+    background: none
+    image_placement: cover
+  - 
+    type: divider
+    divider_type: whitespace
+    mobile_treatment: same
+  - 
+    type: text_image_split
+    heading: Wuhan Tiandi Store
+    small_text: Wuhan
+    text: 1F,Wuhan Tiandi,No 1618,Zhongshan Road,Jiangan district,Wuhan,Hubei
+    image: ""
+    image_height: basic
+    style: left
+    background: none
+    image_placement: cover
+  - 
+    type: divider
+    divider_type: whitespace
+    mobile_treatment: same
+  - 
+    type: text_image_split
+    heading: XM Lu Jiang Dao Store
+    small_text: Xiamen
+    text: Xin Ling Hui Square101 G/F, M210B 2/F M301B 3/F and M401A 4/F, Lujiang Road, Xiamen
+    image: ""
+    image_height: basic
+    style: left
+    background: none
+    image_placement: cover
+  - 
+    type: divider
+    divider_type: whitespace
+    mobile_treatment: same
+  - 
+    type: text_image_split
+    heading: XA Zhongda international Store
+    small_text: Xi'an
+    text: 1F, NO.72, Gaoxin Road, Gaoxin District,Xi'an, Shanxi
+    image: ""
+    image_height: basic
+    style: left
+    background: none
+    image_placement: cover
+  - 
+    type: divider
+    divider_type: whitespace
+    mobile_treatment: same
+  - 
+    type: text_image_split
+    heading: ZZ  City on Store
+    small_text: Zhengzhou
+    text: L1019, City On Center, East Nongye Road, Zhengzhou, Henan
+    image: ""
+    image_height: basic
+    style: left
+    background: none
+    image_placement: cover
+  - 
+    type: divider
+    divider_type: whitespace
+    mobile_treatment: same
+  - 
+    type: text_image_split
+    heading: ZS Shiqi Daxin Plaza Stroe
+    small_text: Zhongshan
+    text: Unit1FA02, 1st and 2nd Floor, Shiqi Daxin Plaza, No.2 South Daxin Road, Shiqi District, Zhongshan
+    image: ""
+    image_height: basic
+    style: left
+    background: none
+    image_placement: cover
+  - 
+    type: divider
+    divider_type: whitespace
+    mobile_treatment: same
+  - 
+    type: text_image_split
+    heading: ZH Hua Fa Mall No.1 Store
+    small_text: Zhuhai
+    text: First Floor ,Outside of the Floating Pavilion Plaza,Huafa Mall, No.8 Zhuhai Avenue
+    image: ""
+    image_height: basic
+    style: left
+    background: none
+    image_placement: cover
