@@ -14,6 +14,13 @@
 			text-align: center;
 			background-color: #aaa;
 		}
+		.div1center{
+			width: 100px;
+			height: 50px;
+			line-height: 50px;
+			background-color: red;
+			display: inline-block;
+		}
 		.div2{
 			width: 400px;
 			height: 200px;
@@ -71,7 +78,11 @@
 	</style>
 </head>
 <body>
-	<div class="div1">在块级元素中内容水平居中：text-align: center</div>
+	<div class="div1">
+		<div class="div1center">
+			居中
+		</div>
+	</div>
 	<div class="div2">定宽的div块居中,margin:0 auto;</div>
 	<div class="div3">fixed、absolute定位</div>
 	<div class="div4">

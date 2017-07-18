@@ -7,14 +7,20 @@
 <body>
 	水平居中
 	1. text-align: center;
+	// 可使用场景 块级元素包含行内元素
+	// h,p等块级标签，让标签内文本居中 √
+	// div块级元素让内部的行内元素居中 √
 	2. margin: 0 auto;
+	//块级元素内的块级元素居中
 	3. position定位:fixed / absoluted; left: 50%; margin-left: -width/2;
+	//块级元素内包含块级元素（宽度已知不是自适应）
 	4. margin-left: 50%;(父元素的百分之50) transform: translate(-50%,0)(自身宽度的50%);
+	//块级元素包含块级元素
 	5. display: flex; justify-content: center; 
-
 	
 	垂直居中
 	1. height: 20px; line-height: 20px;
+	// 块级元素内为行内元素
 	2. 父元素 / display: table; 子元素 / display: table-cell; vertical-align: center;
 	3. 父元素 / position: relative; 
 	   子元素 / position: absolute; 
