@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h2> yeoman </h2>
+	<ul>
+		<li>YO: Yeoman核心工具，项目工程依赖目录和文件生成工具，项目生产环境和编译环境生成工具</li>
+		<li>GRUNT: 前端构建工具，jquery就是使用这个工具打包的</li>
+		<li>BOWER: Web开发的包管理器，概念上类似npm，npm专注于nodeJs模块，而bower专注于CSS、JavaScript、图像等前端相关内容的管理</li>
+	</ul> 
+	<h2>react相关开发工具</h2>
+	<ul>
+		<li>Gulp:易学、易用、高效--NodeJs项目构建工具</li>
+		<p>npm install gulp: gulp安装</p>
+		<p>npm init: 创建一个package.json</p>
+		<p>cnpm install gulp-react --save: 将jsx转成js</p>
+		<li>Browserify</li>
+		<p>部署时处理代码依赖，将模块打包到一起</p>
+		<p>问题：1 暂时用不到的代码也会被打包，体积大，首次加载速度慢</p>
+		<p>2 只要一个模块更新，整个文件缓存失效</p>
+		<li>Webpack MOODULE BUNDLER</li>
+		<p>单页面应用</p>
+		<p>npm install webpack -g: 安装</p>
+		<p>code splitting 和 loader</p>
+		<p>loader 可以处理各种静态文件</p>
+		<p>Webpack和另外两个并没有太多的可比性，Gulp/Grunt是一种能够优化前端的开发流程的工具，而WebPack是一种模块化的解决方案，不过Webpack的优点使得Webpack可以替代Gulp/Grunt类的工具。</p>
+		//一个常见的Webpack配置文件
+		var webpack = require('webpack');
+		var HtmlWebpackPlugin = require('html-webpack-plugin');
+		var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+		module.exports = {
+		  //唯一入口文件
+		  entry: __dirname + "/app/main.js",
+		  output: {
+		    // 打包后的文件存放的位置
+		    path: __dirname + "/build",
+		    // 打包后输出文件的文件名
+		    filename: "[name]-[hash].js"
+		  },
+
+		  module: {
+		    loaders: [
+		      {
+		        test: /\.json$/,
+		        loader: "json"
+		      },
+		      {
+		        test: /\.js$/,
+		        exclude: /node_modules/,
+		        loader: 'babel'
+		      },
+		      {
+		        test: /\.css$/,
+		        loader: ExtractTextPlugin.extract('style', 'css?modules!postcss')
+		      }
+		    ]
+		  },
+		  postcss: [
+		    require('autoprefixer')
+		  ],
+
+		  plugins: [
+		    new HtmlWebpackPlugin({
+		      template: __dirname + "/app/index.tmpl.html"
+		    }),
+		    new webpack.optimize.OccurenceOrderPlugin(),
+		    new webpack.optimize.UglifyJsPlugin(),
+		    new ExtractTextPlugin("[name]-[hash].css")
+		  ]
+		}
+		<li>atom-shell: 打包成桌面程序（由国人赵成开发）</li>
+		<p>表面上是桌面程序，实质上是Chrome内核</p>
+		<p></p>
+	</ul>
+</body>
+</html>
