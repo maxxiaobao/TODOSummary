@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h5>React.createElement()</h5>
+	<code>
+		const element = React.createElement(
+		  'h1',
+		  {className: 'greeting'},
+		  'Hello, world!'
+		);
+	</code>
+	<h5>为什么在react的constructor要使用super(this)</h5>
+	<ul>
+		<li>1.调用super的原因：在ES6中，在子类的contructor中必须先调用super才能引this</li>
+		<li>2.super(props)的目的：在constructor中可以使用this.props</li>
+		<li>如果你用到了contructor就必须写super(),用来初始化this的，可以绑定事件到this上，如果在constructor中要使用this.props就必须给super加参数：super(props);无论有没有contractor，在render中this.props都是可以用的，这是React上自动附带的，如果没有用到contructor时可以不写</li>
+	</ul>
+	<h5>Pure function</h5>
+</body>
+</html>
+
+
+
+
+
+
