@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h2>http服务器</h2>
+	<ul>
+		<li>Web服务器的基本功能就是提供Web信息浏览服务。它只需支持HTTP协议、HTML文档格式及URL。与客户端的网络浏览器配合。因为Web服务器主要支持的协议就是HTTP，所以通常情况下HTTP服务器和WEB服务器是相等的(有没有支持除HTTP之外的协议x的web服务器，作者没有考证过)，说的是一回事。</li>
+		<li>
+			微软说"我们把应用程序服务器定义为“作为服务器执行共享业务应用程序的底层的系统软件”。 就像文件服务器为很多用户提供文件一样，应用程序服务器让多个用户可以同时使用应用程序
+		</li>
+		<li>
+		Web服务器传送(serves)页面使浏览器可以浏览，然而应用程序服务器提供的是客户端应用程序可以调用(call)的方法(methods)。确切一点，你可以说:Web服务器专门处理HTTP请求(request)，但是应用程序服务器是通过很多协议来为应用程序提供(serves)商业逻辑 (business logic)。
+		</li>
+	</ul> 
+	<h2>nginx</h2>
+	<ul>
+		<li>HTTP服务器</li>
+		<li>处理静态文件，索引文件以及自动索引；打开文件描述符缓冲．</li>
+		<li>无缓存的反向代理加速，简单的负载均衡和容错．</li>
+		<li>FastCGI，简单的负载均衡和容错．</li>
+		<li>模块化的结构。包括gzipping, byte ranges, chunked responses,以及 SSI-filter等filter。如果由FastCGI或其它代理服务器处理单页中存在的多个SSI，则这项处理可以并行运行，而不需要相互等待。</li>
+		<li>支持SSL 和 TLSSNI．</li>
+		<li>Nginx专为性能优化而开发，性能是其最重要的考量,实现上非常注重效率 。它支持内核Poll模型，能经受高负载的考验,有报告表明能支持高达 50,000个并发连接数。
+		</li>
+	</ul>
+	<h2>css热点链接设置</h2>
+	一、热点的原理
+	图片通过usemap="#Map"属性将名称为"Map"的热点区域及连接映射到图片上
+	一般来说，图片的usermap的属性对应的是map热点的name的属性值，所以如果页面中有多个图片添加热点，那么每个图片的usermap值跟对应的热点地图的name值一定要一样，且不同的热点区域name值不可以相同。
+	二、设置图片热点链接用到三种标签：<img> <map> <area>
+	1、shape 定义热点的形状
+	shape=rect 矩形
+	shape=circle 圆形
+	shape=poly 多边形
+	2、coords 定义区域点的坐标
+	a.矩形：必须使用四个数字，前两个数字为左上角坐标，后两个字为右下角坐标
+	例：<area shape=rect coords=100,50,200,75 href="URL" >
+	b.圆形：必须使用三个数字，前两个数字为圆心坐标，最后一个数字为半径长度
+	例：<area shape=circle coords=85,155,30 href="URL">
+	c.任意图形(多边形)：将图形之每一转折点坐标依次填入
+	例：<area shape=poly coords=237,70,285,70,300,90,250,90 href="URL">
+
+	<img id="monitor_map" src="image/caramel2.png" onclick="mapOnClick(event)"/>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+	<script type="text/javascript">
+		function mapOnClick(e){
+	        e = e || window.event;
+	        var imgId ='#'+ $(e.target).attr('id');
+	        var currentWidth = $(imgId).width();
+	        var currentHeight = $(imgId).height();
+	        var offsetX = e.pageX - $(imgId).offset().left;
+	        var offsetY = e.pageY - $(imgId).offset().top;
+	        var x = offsetX / currentWidth;
+	        var y = offsetY / currentHeight;
+	        alert(x + ':' + y);
+    	}
+	</script>
+</body>
+</html>

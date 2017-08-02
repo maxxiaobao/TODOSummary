@@ -1,0 +1,126 @@
+body {
+    height: 1000px;
+}
+
+
+.popup-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+}
+.mooncake-popup {
+    position: fixed;
+    width: 1024px;
+    background-color: #fff;
+    top: -100%;
+    left:50%;
+    transform: translate(-50%);
+    overflow: hidden;
+    opacity: 0;
+    transition: all .3s linear;
+    @media screen and (max-width:1024px){
+        width: 84%;
+        margin: 0 auto;
+    }
+    &.active {
+        opacity: 1;
+        top: 50%;
+        transform:translate(-50%,-50%);
+    }
+    .mooncake-popup-close {
+        position: absolute;
+        content: '';
+        top: 20px;
+        right: 24px;
+        display: block;
+        height: 25px;
+        width: 25px;
+        background: #fff;
+        z-index: 10;
+        cursor: pointer;
+        &:before,&:after {
+            height: 1px;
+            width: 25px;
+            top: 12px;
+            position: absolute;
+            content: '';
+            display: block;
+            background: #aa8e64;
+            transform: rotate(45deg);
+        }
+        &:after {
+            transform: rotate(-45deg)
+        }
+         @media screen  and (max-width:767px){
+            top: 15px;
+            right: 20px;
+        }
+    }
+    .mooncake-image {
+         width: 48%;
+         img {
+             width: 100%;
+             display: block;
+         }
+    }
+    .mooncake-detail {
+        width: 52%;
+        text-align: center;
+        font-family: PingFangSC;
+        @media screen  and (max-width:767px){
+            padding: 0 5%;
+            box-sizing: border-box;
+        }
+        
+        .mooncake-name {
+            font-size: 32px;
+            color: #525252;
+            margin-top: 37%;
+            line-height: 32px;
+            @media screen  and (max-width:768px){
+                font-size: 24px;
+            }
+            @media screen  and (max-width:767px){
+                margin-top: 12%;
+            }
+        }
+        .mooncake-intro {
+            font-size: 18px;
+            color: #7e7c7c;
+            width: 320px;
+            margin: 5% auto 0;
+            font-weight: 300;
+            @media screen  and (max-width:768px){
+                margin: 3% auto 0;
+                font-size: 16px;
+                width: 88%;
+            }
+        }
+        .mooncake-package {
+            margin-top: 23.5%;
+            font-size: 14px;
+            color: #7e7c7c;
+            font-weight: 300;
+            .divide-line {
+                margin: 0 20px;
+            }
+            .mooncake-packages {
+                color: #aa8e64;
+            }
+            @media screen  and (max-width:767px){
+                margin: 11% 0;
+            }
+        }
+    }
+     .mooncake-image,.mooncake-detail {
+        float: left;
+        @media screen  and (max-width:767px){
+            width: 100%;
+        }
+        
+    }
+}
