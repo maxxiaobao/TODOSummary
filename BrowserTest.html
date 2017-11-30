@@ -103,12 +103,9 @@
         break;
     }
 
-    alert(Browser + " " + Version + "" + Platform);
+    return (Browser + " " + Version + "" + Platform);
 
   }
-
-
-  getBrowserVersion();
 
 //     alert(getExploreName());
     function getExploreName(){
@@ -142,7 +139,7 @@
       }
     }
     window.onload=function(){
-      document.getElementById("version").innerHTML = getExploreName();
+      document.getElementById("version").innerHTML = getBrowserVersion();
       document.getElementById("userAgent").innerHTML = navigator.userAgent.toLowerCase()
       console.log(navigator.userAgent.toLowerCase());
     }
