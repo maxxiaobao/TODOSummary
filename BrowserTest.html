@@ -29,10 +29,10 @@
         return 'Firefox';
       }else if(userAgent.match(/qqbrowser/i)){
         return 'QQBrowser';
+      }else if(userAgent.match(/micromessenger/i)){
+        return 'Wechat';
       }else if(userAgent.match(/safari/i) && !userAgent.match(/chrome/i)){ 
         return 'Safari';
-      }else if(userAgent.match(/micromessenger/i)){
-        return 'Weichat';
       }else if(userAgent.match(/safari/i) && userAgent.match(/chrome/i)){ 
         return 'Chrome';
       }else if(!!window.ActiveXObject || "ActiveXObject" in window){
