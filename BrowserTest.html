@@ -23,7 +23,7 @@
         if (!document.createElement ("input").dataset) return "IE10";
       }else if(userAgent.match(/edge/i)){
         return 'Edge';
-      }else if(userAgent.match(/ucweb/i)){
+      }else if(userAgent.match(/ucbrowser/i)){
         return "UC"
       }else if(userAgent.match(/firefox/i)){
         return 'Firefox';
@@ -31,16 +31,12 @@
         return 'QQBrowser';
       }else if(userAgent.match(/safari/i) && !userAgent.match(/chrome/i)){ 
         return 'Safari';
-      }else if(userAgent.match(/chrome/i) && userAgent.match(/chrome/i)){ 
+      }else if(userAgent.match(/micromessenger/i)){
+        return 'Weichat';
+      }else if(userAgent.match(/safari/i) && userAgent.match(/chrome/i)){ 
         return 'Chrome';
       }else if(!!window.ActiveXObject || "ActiveXObject" in window){
         return 'IE11';
-      }else if(userAgent.match(/ipad/i)){
-        return "iPad";
-      }else if(userAgent.match(/iphone os/i)){
-        return "iPhone";
-      }else if(userAgent.match(/android/i)){
-        return "Android";
       }else{
         return 'Unkonwn';
       }
