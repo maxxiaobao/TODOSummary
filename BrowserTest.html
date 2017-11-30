@@ -47,7 +47,8 @@
     }
     window.onload=function(){
       document.getElementById("version").innerHTML = getExploreName();
-      document.getElementById("userAgent").innerHTML = userAgent;
+      document.getElementById("userAgent").innerHTML = navigator.userAgent.toLowerCase()
+      console.log(navigator.userAgent.toLowerCase());
     }
     </script>
 </body>
