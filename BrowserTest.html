@@ -10,6 +10,106 @@
   <h2 id="version"></h2>
   <h2 id="userAgent"></h2>
   <script type="text/javascript">
+  var BrowserMap = [
+    {
+      regex: /opr/i,
+      matched: 'Opera'
+    },
+    {
+      regex: /compatible/i,
+      matched: 'IE'
+    },
+    {
+      regex: /msie/i,
+      matched: 'IE'
+    },
+    {
+      regex: /edge/i,
+      matched: 'Edge'
+    },
+    {
+      regex: /ucbrowser/i,
+      matched: 'UC'
+    },
+    {
+      regex: /firefox/i,
+      matched: 'Firefox'
+    },
+    {
+      regex: /qqbrowser/i,
+      matched: 'QQbrowser'
+    },
+    {
+      regex: /micromessenger/i,
+      matched: 'Wechat'
+    },
+    {
+      regex: /micromessenger/i,
+      matched: 'Wechat'
+    },
+    {
+      regex: /chrome/i,
+      matched: 'Chrome'
+    },
+    {
+      regex: /safari/i,
+      matched: 'Safari'
+    },
+  ]
+
+  var platforms = [
+    {
+      regex: /android/,
+      matched: 'Android'
+    },
+    {
+      regex: /iphone/,
+      matched: 'iphone'
+    },
+    {
+      regex: /ipad/,
+      matched: 'ipad'
+    }
+  ]
+
+  var getBrowserVersion = function(){
+    var userAgent = navigator.userAgent.toLowerCase();
+    var Browser = "";
+    var Version = ""
+    var Platform = "";
+    for(let i in BrowserMap){
+      if(Browser == "" && userAgent.match(BrowserMap[i].regex)){
+        Browser = BrowserMap[i].matched;
+      }
+    }
+    for(let i in platforms){
+      if( Platform == "" && userAgent.match(platforms[i].regex)){
+        Platform = platforms[i].matched;
+      }
+    }
+    switch (Browser) {
+      case "IE":
+        if (!window.XMLHttpRequest) Version = "6";
+        if (!window.document.querySelector) Version = "7";
+        if (!window.document.addEventListener) Version = "8";
+        if (!window.atob) Version = "9";
+        if (!document.createElement ("input").dataset) Version = "10";
+        break;
+      case "":
+        if(!!window.ActiveXObject || "ActiveXObject" in window) 
+          Browser = "IE11";
+        else
+          Browser = "unkonwn";
+        break;
+    }
+
+    alert(Browser + " " + Version + "" + Platform);
+
+  }
+
+
+  getBrowserVersion();
+
 //     alert(getExploreName());
     function getExploreName(){
       var userAgent = navigator.userAgent.toLowerCase();
