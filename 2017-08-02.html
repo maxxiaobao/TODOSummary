@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h3>一、网页的大小和浏览器窗口的大小</h3>
+	<ul>
+		<li>网页的面积：由内容和CSS样式表确定</li>
+		<li>浏览器窗口的大小，是指在浏览器窗口看到的那部分网页面积，又叫做viewport</li>
+	</ul>
+	<h3>获取网页的大小</h3>
+	<ul>
+		<li>
+			网页上的每个元素，都有clientHeight和width属性，这两个属性指元素的内容部分再加上padding的面积，不包括滚动条占用的空间
+		</li>
+		<li>
+			 表示网页的大小
+			 width: document.body.clientWidth,
+　　　　　　　　height: document.body.clientHeight
+		</li>
+		<li>
+			<code>
+			function getViewport(){
+			　　　　if (document.compatMode == "BackCompat"){
+			　　　　　　return {
+			　　　　　　　　width: document.body.clientWidth,
+			　　　　　　　　height: document.body.clientHeight
+			　　　　　　}
+			　　　　} else {
+			　　　　　　return {
+			　　　　　　　　width: document.documentElement.clientWidth,
+			　　　　　　　　height: document.documentElement.clientHeight
+			　　　　　　}
+			　　　　}
+			　　}
+			</code>
+			1）这个函数必须在页面加载完成后才能运行，否则document对象还没生成，浏览器会报错。
+			2）大多数情况下，都是document.documentElement.clientWidth返回正确值。但是，在IE6的quirks模式中，document.body.clientWidth返回正确的值，因此函数中加入了对文档模式的判断。
+			3）clientWidth和clientHeight都是只读属性，不能对它们赋值。
+		</li>
+	</ul>
+</body>
+</html>

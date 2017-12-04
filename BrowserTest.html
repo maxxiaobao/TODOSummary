@@ -10,45 +10,147 @@
   <h2 id="version"></h2>
   <h2 id="userAgent"></h2>
   <script type="text/javascript">
-//     alert(getExploreName());
-    function getExploreName(){
-      var userAgent = navigator.userAgent.toLowerCase();
-      if(userAgent.match(/opr/i)){ 
-        return 'Opera';
-      }else if(userAgent.match(/compatible/i) || userAgent.match(/msie/i)){
-        if (!window.XMLHttpRequest) return "IE6";
-        if (!window.document.querySelector) return "IE7";
-        if (!window.document.addEventListener) return "IE8";
-        if (!window.atob) return "IE9";
-        if (!document.createElement ("input").dataset) return "IE10";
-      }else if(userAgent.match(/edge/i)){
-        return 'Edge';
-      }else if(userAgent.match(/ucweb/i)){
-        return "UC"
-      }else if(userAgent.match(/firefox/i)){
-        return 'Firefox';
-      }else if(userAgent.match(/qqbrowser/i)){
-        return 'QQBrowser';
-      }else if(userAgent.match(/safari/i) && !userAgent.match(/chrome/i)){ 
-        return 'Safari';
-      }else if(userAgent.match(/chrome/i) && userAgent.match(/chrome/i)){ 
-        return 'Chrome';
-      }else if(!!window.ActiveXObject || "ActiveXObject" in window){
-        return 'IE11';
-      }else if(userAgent.match(/ipad/i)){
-        return "iPad";
-      }else if(userAgent.match(/iphone os/i)){
-        return "iPhone";
-      }else if(userAgent.match(/android/i)){
-        return "Android";
-      }else{
-        return 'Unkonwn';
+  // matching browser rules
+  var BrowserMap = [
+    {
+      regex: /opr/i,
+      key: 'opr',
+      matched: 'Opera'
+    },
+    {
+      regex: /compatible/i,
+      key: 'compatible',
+      matched: 'IE'
+    },
+    {
+      regex: /msie/i,
+      key: 'msies',
+      matched: 'IE'
+    },
+    {
+      regex: /edge/i,
+      key: 'edge',
+      matched: 'Edge'
+    },
+    {
+      regex: /ucbrowser/i,
+      key: 'ucbrowser',
+      matched: 'UC'
+    },
+    {
+      regex: /firefox/i,
+      key: 'firefox',
+      matched: 'Firefox'
+    },
+    {
+      regex: /micromessenger/i,
+      key: "micromessenger",
+      matched: 'Wechat'
+    },
+    {
+      regex: /qqbrowser/i,
+      key: 'qqbrowser',
+      matched: 'QQbrowser'
+    },
+    {
+      regex: /chrome/i,
+      key: 'chrome',
+      matched: 'Chrome'
+    },
+    {
+      regex: /safari/i,
+      key: 'safari',
+      matched: 'Safari'
+    },
+  ]
+  // matching platform rules
+  var platforms = [
+    {
+      regex: /android/,
+      matched: 'Android'
+    },
+    {
+      regex: /iphone/,
+      matched: 'iphone'
+    },
+    {
+      regex: /ipad/,
+      matched: 'ipad'
+    }
+  ]
+
+  var userAgent = navigator.userAgent.toLowerCase();
+
+  function getBrowserName() {
+    var name = "";
+    var key = "";
+    for(var i in BrowserMap){
+      if(name == "" && userAgent.match(BrowserMap[i].regex)){
+        name = BrowserMap[i].matched;
+        key = BrowserMap[i].key;
       }
     }
-    window.onload=function(){
-      document.getElementById("version").innerHTML = getExploreName();
-      document.getElementById("userAgent").innerHTML = userAgent;
+    return  { name: name, key: key}
+  }
+
+  function getBrowserVersion(){
+    var Browser = getBrowserName();
+    var Version = ""
+    switch (Browser.name) {
+      case "IE":
+        if (!window.XMLHttpRequest) {
+          Version = "6";
+        }else if (!window.document.querySelector){
+          Version = "7";
+        }else if (!window.document.addEventListener) {
+          Version = "8";
+        }else if (!window.atob) {
+          Version = "9";
+        } else if (!document.createElement ("input").dataset) {
+          Version = "10"; 
+        }
+        break;
+      case "":
+        if(!!window.ActiveXObject || "ActiveXObject" in window){
+          Browser.name = "IE";
+          Version = "11";
+        } else {
+          Browser = "unkonwn";
+          Version = "unkonwn";
+        } 
+        break;
+      default:
+        Version = userAgent.split(Browser.key + "/")[1].split(" ")[0];
+        break;
     }
-    </script>
+    return Version;
+  }
+
+  function getPlatform(){
+    var Platform = "";
+    for(var j in platforms){
+      if( Platform == "" && userAgent.match(platforms[j].regex)){
+        Platform = platforms[j].matched;
+      }
+    }
+   return Platform == "" ? "PC" : Platform;
+  }
+
+  var getBrowserInfo = function(){
+    return {
+      name: getBrowserName().name,
+      version: getBrowserVersion(),
+      platform: getPlatform()
+    }
+  }
+
+  var BrowserInfo = getBrowserInfo();
+
+  window.onload=function(){
+    document.getElementById("version").innerHTML = BrowserInfo.name  + BrowserInfo.version + BrowserInfo.platform;
+    document.getElementById("userAgent").innerHTML = navigator.userAgent.toLowerCase()
+    console.log(navigator.userAgent.toLowerCase());
+  }
+  </script>
 </body>
 </html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<a>http://www.ruanyifeng.com/blog/2009/09/find_element_s_position_using_javascript.html</a>
+	<h3>一、网页的大小和浏览器窗口的大小</h3>
+	<ul>
+		<li>网页的面积：由内容和CSS样式表确定</li>
+		<li>浏览器窗口的大小，是指在浏览器窗口看到的那部分网页面积，又叫做viewport</li>
+	</ul>
+	<h3>获取网页的大小</h3>
+	<ul>
+		<li>
+			网页上的每个元素，都有clientHeight和width属性，这两个属性指元素的内容部分再加上padding的面积，不包括滚动条占用的空间
+		</li>
+		<li>
+			 表示网页的大小
+			 width: document.body.clientWidth,
+　　　　　　　　height: document.body.clientHeight
+		</li>
+		<li>
+			<code>
+			function getViewport(){
+			　　　　if (document.compatMode == "BackCompat"){
+			　　　　　　return {
+			　　　　　　　　width: document.body.clientWidth,
+			　　　　　　　　height: document.body.clientHeight
+			　　　　　　}
+			　　　　} else {
+			　　　　　　return {
+			　　　　　　　　width: document.documentElement.clientWidth,
+			　　　　　　　　height: document.documentElement.clientHeight
+			　　　　　　}
+			　　　　}
+			　　}
+			</code>
+			1）这个函数必须在页面加载完成后才能运行，否则document对象还没生成，浏览器会报错。
+			2）大多数情况下，都是document.documentElement.clientWidth返回正确值。但是，在IE6的quirks模式中，document.body.clientWidth返回正确的值，因此函数中加入了对文档模式的判断。
+			3）clientWidth和clientHeight都是只读属性，不能对它们赋值。
+		</li>
+	</ul>
+	<h3>获取网页大小的另一种方法</h3>
+	<ul>
+		<li>网页上每个元素还有scrollHeight和scrollWidth属性,指包含滚动条在内的该元素的视觉设计面积</li>
+		<li>如果网页内容能够在浏览器中全部显示，不出现滚动条，那么网页的clientWidth和scrollWidth应该相等。但是实际上，不同的浏览器有不同的处理，这两个值未必相等。</li>
+	</ul>
+	<h3>获取网页元素的绝对位置</h3>
+	<ul>
+		<li>网页元素的绝对位置，是指元素左上角相对于整张网页左上角的坐标。所以这个位置要通过计算才可以得到</li>
+		<li>每个元素都有offsetTop和offsetLeft属性，表示该元素的左上角与父容器(offsetParent)左上角距离需要将这两个值进行累加就可以得到该元素的绝对坐标</li>
+	</ul>
+	<h3>获取网页元素的相对位置</h3>
+	<ul>
+		<li>网页元素的相对位置，指该元素的左上角相对于浏览器窗口左上角的坐标</li>
+		<li>scrollTop 和 scrollLeft 属性</li>
+		<li>scrollTop 和 scrollLeft 是可以赋值的，并且会自动滚动到相应的位置</li>
+	</ul>
+	<h3>获取元素位置的快速方法</h3>
+	<ul>
+		<li>使用getBoundingClientRect()方法，它返回一个对象，其中包含了left、right、top、bottom四个属性，分别对应了该元素的左下角和右下角相对于浏览器窗口（viewport）左上角的距离</li>
+		<li>网页元素的相对位置就是
+　　			var X= this.getBoundingClientRect().left;
+　　			var Y =this.getBoundingClientRect().top;
+			再加上滚动距离，就可以得到绝对位置
+　　			var X= this.getBoundingClientRect().left+document.documentElement.scrollLeft;
+　　			var Y =this.getBoundingClientRect().top+document.documentElement.scrollTop;
+		</li>
+	</ul>
+</body>
+</html>
