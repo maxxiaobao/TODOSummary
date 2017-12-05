@@ -66,6 +66,22 @@
   // matching platform rules
   var platforms = [
     {
+      regex: /windows Phone/,
+      matched: 'Android'
+    },
+    {
+      regex: /win/,
+      matched: 'Windows'
+    },
+    {
+      regex: /linux/,
+      matched: 'Linux'
+    },
+    {
+      regex: /X11/,
+      matched: 'UNIX'
+    },
+    {
       regex: /android/,
       matched: 'Android'
     },
@@ -76,11 +92,16 @@
     {
       regex: /ipad/,
       matched: 'ipad'
+    },
+    {
+      regex: /mac/,
+      matched: 'Mac'
     }
   ]
-
+  // Browser basic info，mation
   var userAgent = navigator.userAgent.toLowerCase();
 
+  // match Browser name
   function getBrowserName() {
     var name = "";
     var key = "";
@@ -90,9 +111,12 @@
         key = BrowserMap[i].key;
       }
     }
+    if(name == "" && (!!window.ActiveXObject || "ActiveXObject" in window)){
+      name = "IE";
+    }
     return  { name: name, key: key}
   }
-
+  // match Browser version
   function getBrowserVersion(){
     var Browser = getBrowserName();
     var Version = ""
@@ -108,16 +132,9 @@
           Version = "9";
         } else if (!document.createElement ("input").dataset) {
           Version = "10"; 
-        }
-        break;
-      case "":
-        if(!!window.ActiveXObject || "ActiveXObject" in window){
-          Browser.name = "IE";
+        }else if(!!window.ActiveXObject || "ActiveXObject" in window){
           Version = "11";
-        } else {
-          Browser = "unkonwn";
-          Version = "unkonwn";
-        } 
+        }
         break;
       default:
         Version = userAgent.split(Browser.key + "/")[1].split(" ")[0];
@@ -125,7 +142,7 @@
     }
     return Version;
   }
-
+  // match platform ['android','iphone','pc']
   function getPlatform(){
     var Platform = "";
     for(var j in platforms){
@@ -133,7 +150,7 @@
         Platform = platforms[j].matched;
       }
     }
-   return Platform == "" ? "PC" : Platform;
+   return Platform == "" ? "unknown" : Platform;
   }
 
   var getBrowserInfo = function(){
